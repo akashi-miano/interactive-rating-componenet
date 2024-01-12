@@ -4,7 +4,7 @@ import { useState } from "react";
 import starIcon from "../assets/icon-star.svg";
 
 const Feedback = () => {
-  const [selected, setSelected] = useState<number>();
+  const [selected, setSelected] = useState<number>(-1);
   const [submitted, setIsSubmitted] = useState<boolean>(false);
 
   const handleClick = (num: number) => {
@@ -52,10 +52,10 @@ const Feedback = () => {
               </div>
               <button
                 type="submit"
-                disabled={selected === undefined}
+                disabled={selected === -1}
                 onClick={() => setIsSubmitted(true)}
                 className={
-                  selected === undefined
+                  selected === -1
                     ? "btn w-full text-white !bg-gray-599 rounded-full"
                     : "btn w-full text-white !bg-[#fc7614] rounded-full hover:!bg-white hover:text-[#fc7613] duration-300 focus:text-[#fc7613] focus:!bg-white"
                 }
